@@ -17,6 +17,39 @@ padding:0;
 box-sizing:border-box;
 font-family:Poppins,sans-serif;
 }
+.timeline{
+position:relative;
+margin:40px auto;
+padding-left:20px;
+border-left:3px solid #00ffe7;
+}
+
+.timeline-item{
+margin-bottom:30px;
+padding-left:20px;
+opacity:0;
+transform:translateX(-20px);
+animation:slideIn 1s forwards;
+}
+
+.timeline-item:nth-child(2){
+animation-delay:0.3s;
+}
+
+.timeline-item:nth-child(3){
+animation-delay:0.6s;
+}
+
+.timeline-item h3{
+color:#00ffe7;
+}
+
+@keyframes slideIn{
+to{
+opacity:1;
+transform:translateX(0);
+}
+}
 
 body{
 background:linear-gradient(120deg,#0f0c29,#302b63,#24243e,#00c9ff,#92fe9d);
@@ -247,6 +280,8 @@ padding:10px;
 <a href="#projects">Projects</a>
 <a href="#skills">Skills</a>
 <a href="#certificates">Certificates</a>
+<a href="#achievements">Achievements</a>
+<a href="#education">Education</a>
 <a href="#contact">Contact</a>
 </div>
 
@@ -291,7 +326,7 @@ My goal is to develop intelligent systems that improve people's lives and contri
 <h3>Scheme Finder</h3>
 
 <p>
-A web platform designed to help citizens easily discover government welfare schemes and benefits available to them.
+A web platform designed to help citizens easily discover government welfare schemes.
 </p>
 
 <a href="https://scheme-finder--vjagdeepsai.replit.app">View Project</a>
@@ -303,7 +338,7 @@ A web platform designed to help citizens easily discover government welfare sche
 <h3>Smart Blind Stick</h3>
 
 <p>
-An Arduino powered assistive device that detects nearby obstacles and alerts visually impaired individuals for safer navigation.
+An Arduino powered assistive device that detects obstacles and alerts visually impaired individuals.
 </p>
 
 </div>
@@ -335,14 +370,12 @@ An Arduino powered assistive device that detects nearby obstacles and alerts vis
 
 <section id="certificates">
 
-<h2>Certifications & Achievements</h2>
+<h2>Certifications</h2>
 
 <div class="grid">
 
 <div class="card">
-
 <h3>Cisco</h3>
-
 <ul>
 <li>Python Programming</li>
 <li>HTML</li>
@@ -350,48 +383,86 @@ An Arduino powered assistive device that detects nearby obstacles and alerts vis
 <li>Java</li>
 <li>C Programming</li>
 </ul>
-
 </div>
 
 <div class="card">
-
 <h3>Deloitte</h3>
-
 <ul>
 <li>Data Analytics Job Simulation</li>
 </ul>
-
 </div>
 
 <div class="card">
-
 <h3>IBM</h3>
-
 <ul>
-<li>prompt Engineering for Everyone</li>    
+<li>Prompt Engineering for Everyone</li>
 </ul>
-
 </div>
 
 <div class="card">
-
 <h3>ORACLE</h3>
-
 <ul>
-<li>Artifical Intelligence and Machine Learning</li>
+<li>Artificial Intelligence and Machine Learning</li>
 </ul>
-
 </div>
+
 <div class="card">
-
 <h3>Google</h3>
-
 <ul>
 <li>Generative AI – Google Cloud</li>
 <li>Google Skillshop</li>
 <li>Google Play Academy</li>
 </ul>
+</div>
 
+</div>
+
+</section>
+
+<section id="achievements">
+
+<h2>Achievements</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>NCC 'B' Certificate</h3>
+<p>Demonstrated leadership, discipline and national service.</p>
+</div>
+
+<div class="card">
+<h3>Football Champion</h3>
+<p>Inter-School Football Championship Winner.</p>
+</div>
+
+<div class="card">
+<h3>District Table Tennis Player</h3>
+<p>Represented district level competitions.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="education">
+
+<h2>Education</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h3>B.Tech – Computer Science (AI)</h3>
+<p>Currently Pursuing</p>
+</div>
+
+<div class="timeline-item">
+<h3>Intermediate – MPC</h3>
+<p>Sree Acharya Junior College</p>
+</div>
+
+<div class="timeline-item">
+<h3>Schooling – ICSE</h3>
+<p>Siva Sivani Public School</p>
 </div>
 
 </div>
@@ -405,59 +476,34 @@ An Arduino powered assistive device that detects nearby obstacles and alerts vis
 <div class="grid">
 
 <div class="card">
-
 <h3>Email</h3>
-
-<p>Reach out for collaborations, internships, or opportunities.</p>
-
 <a href="mailto:vjagdeepsai@gmail.com">vjagdeepsai@gmail.com</a>
-
 </div>
 
 <div class="card">
-
 <h3>Phone</h3>
-
-<p>Feel free to contact me directly.</p>
-
 <p>+91 9063802379</p>
-
 </div>
-
-</div>
-
-<h2 style="margin-top:60px;">View Me</h2>
-
-<div class="grid">
 
 <div class="card">
-
 <h3>LinkedIn</h3>
-
 <p>Explore my professional journey and achievements.</p>
-
 <a href="https://www.linkedin.com/in/jagdeep-sai-vandrasi-0910073a3">Visit Profile</a>
-
 </div>
 
 <div class="card">
-
 <h3>CodeChef</h3>
-
 <p>Check out my competitive programming activity.</p>
-
 <a href="https://www.codechef.com/users/eager_dance_7">View Profile</a>
-
 </div>
 
+</div>
 </div>
 
 </section>
 
 <footer>
-
 <p>© 2026 Jagdeep Sai Vandrasi | Built with passion for technology</p>
-
 </footer>
 
 <div class="chatbot-btn" onclick="toggleChat()">🤖</div>
@@ -525,11 +571,8 @@ color:{value:"#00ffe7"}
 })
 
 function toggleChat(){
-
 let box=document.getElementById("chatbox")
-
 box.style.display=box.style.display=="flex"?"none":"flex"
-
 }
 
 function sendMsg(){
@@ -544,22 +587,22 @@ body.innerHTML+="<p><b>You:</b> "+msg+"</p>"
 let reply="I am Jagdeep's portfolio assistant."
 
 if(msg.includes("project"))
-reply="Jagdeep has built Scheme Finder and Smart Blind Stick."
+reply="Jagdeep built Scheme Finder and Smart Blind Stick."
 
 else if(msg.includes("skills"))
 reply="Jagdeep specializes in AI, Web Development and Python."
 
-else if(msg.includes("certificate"))
-reply="Jagdeep has certificates from Cisco,IBM,ORACLE, Deloitte and Google."
+else if(msg.includes("certificate") || msg.includes("certifications"))
+reply="Jagdeep has certificates from Cisco, IBM, Oracle, Deloitte and Google."
+
+else if(msg.includes("achievement"))
+reply="Jagdeep achieved NCC B Certificate, Inter School Football Champion and District Table Tennis Player."
+
+else if(msg.includes("education"))
+reply="Jagdeep currently pursuing BTech at Vignan Institute of Information Technology in branch of CSE(AI)."
 
 else if(msg.includes("contact") || msg.includes("email"))
-reply="You can email Jagdeep at vjagdeepsai@gmail.com or phone-9063802379"
-
-else if(msg.includes("linkedin"))
-reply="Jagdeep's LinkedIn: linkedin.com/in/jagdeep-sai-vandrasi-0910073a3"
-
-else if(msg.includes("codechef"))
-reply="Jagdeep's CodeChef: codechef.com/users/eager_dance_7"
+reply="You can contact Jagdeep at vjagdeepsai@gmail.com"
 
 body.innerHTML+="<p><b>Bot:</b> "+reply+"</p>"
 
