@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Jagdeep Sai Vandrasi | AI Developer Portfolio</title>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+.timeline{
+position:relative;
+margin:40px auto;
+padding-left:20px;
+border-left:3px solid #00ffe7;
+}
+
+.timeline-item{
+margin-bottom:30px;
+padding-left:20px;
+opacity:0;
+transform:translateX(-20px);
+animation:slideIn 1s forwards;
+}
+
+.timeline-item:nth-child(2){
+animation-delay:0.3s;
+}
+
+.timeline-item:nth-child(3){
+animation-delay:0.6s;
+}
+
+.timeline-item h3{
+color:#00ffe7;
+}
+
+@keyframes slideIn{
+to{
+opacity:1;
+transform:translateX(0);
+}
+}
+
+body{
+background:linear-gradient(120deg,#0f0c29,#302b63,#24243e,#00c9ff,#92fe9d);
+background-size:400% 400%;
+animation:gradient 15s ease infinite;
+color:white;
+overflow-x:hidden;
+}
+
+@keyframes gradient{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+
+#particles-js{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
+/* NAV */
+
+nav{
+display:flex;
+justify-content:space-between;
+padding:20px 10%;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(12px);
+position:sticky;
+top:0;
+}
+
+nav a{
+color:white;
+margin-left:20px;
+text-decoration:none;
+font-weight:500;
+}
+
+nav a:hover{
+color:#00ffe7;
+}
+
+/* HERO */
+
+.hero{
+height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.hero h1{
+font-size:70px;
+background:linear-gradient(90deg,#00ffe7,#ff7cff,#00c3ff);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.typing{
+font-size:26px;
+margin-top:10px;
+height:35px;
+}
+
+.hero p{
+margin-top:10px;
+max-width:600px;
+opacity:0.9;
+}
+
+.btn{
+margin-top:30px;
+padding:15px 35px;
+background:linear-gradient(45deg,#00ffe7,#ff7cff);
+border:none;
+border-radius:30px;
+color:black;
+font-weight:700;
+cursor:pointer;
+font-size:16px;
+}
+
+/* SECTION */
+
+section{
+padding:80px 10%;
+}
+
+h2{
+font-size:40px;
+margin-bottom:30px;
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+/* CARDS */
+
+.card{
+background:rgba(255,255,255,0.12);
+backdrop-filter:blur(15px);
+padding:25px;
+border-radius:18px;
+border:1px solid rgba(255,255,255,0.2);
+transition:0.4s;
+}
+
+.card:hover{
+transform:scale(1.05);
+box-shadow:0 25px 45px rgba(0,0,0,0.4);
+}
+
+.card h3{
+margin-bottom:10px;
+}
+
+.card a{
+color:#00ffe7;
+text-decoration:none;
+font-weight:500;
+}
+
+/* SKILLS */
+
+.skill{
+margin-bottom:20px;
+}
+
+.bar{
+width:100%;
+height:10px;
+background:#333;
+border-radius:10px;
+overflow:hidden;
+}
+
+.fill{
+height:10px;
+background:linear-gradient(90deg,#00ffe7,#ff7cff);
+width:90%;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:40px;
+opacity:0.8;
+}
+
+/* CHATBOT */
+
+.chatbot-btn{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#00ffe7;
+color:black;
+padding:16px;
+border-radius:50%;
+cursor:pointer;
+}
+
+.chatbox{
+position:fixed;
+bottom:90px;
+right:20px;
+width:300px;
+background:#111;
+border-radius:10px;
+display:none;
+flex-direction:column;
+}
+
+.chat-header{
+background:#00ffe7;
+color:black;
+padding:10px;
+}
+
+.chat-body{
+height:250px;
+overflow-y:auto;
+padding:10px;
+font-size:14px;
+}
+
+.chat-input{
+display:flex;
+}
+
+.chat-input input{
+flex:1;
+padding:10px;
+border:none;
+}
+
+.chat-input button{
+background:#00ffe7;
+border:none;
+padding:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="particles-js"></div>
+
+<nav>
+
+<h3>Jagdeep</h3>
+
+<div>
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#skills">Skills</a>
+<a href="#certificates">Certificates</a>
+<a href="#achievements">Achievements</a>
+<a href="#education">Education</a>
+<a href="#contact">Contact</a>
+</div>
+
+</nav>
+
+<section class="hero">
+
+<h1>Jagdeep Sai Vandrasi</h1>
+
+<p class="typing" id="typing"></p>
+
+<button class="btn"
+onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
+Explore My Work
+</button>
+
+</section>
+
+<section id="about">
+
+<h2>About Me</h2>
+
+<p>
+I am a Computer Science student specializing in Artificial Intelligence at Vignan Institute of Information Technology.  
+I enjoy creating innovative technology solutions, exploring AI, and building modern web applications.
+</p>
+
+<p>
+My goal is to develop intelligent systems that improve people's lives and contribute to the future of technology.
+</p>
+
+</section>
+
+<section id="projects">
+
+<h2>Projects</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Scheme Finder</h3>
+
+<p>
+A web platform designed to help citizens easily discover government welfare schemes.
+</p>
+
+<a href="https://scheme-finder--vjagdeepsai.replit.app">View Project</a>
+
+</div>
+
+<div class="card">
+
+<h3>Smart Blind Stick</h3>
+
+<p>
+An Arduino powered assistive device that detects obstacles and alerts visually impaired individuals.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<h2>Skills</h2>
+
+<div class="skill">
+<p>Artificial Intelligence</p>
+<div class="bar"><div class="fill"></div></div>
+</div>
+
+<div class="skill">
+<p>Web Development</p>
+<div class="bar"><div class="fill"></div></div>
+</div>
+
+<div class="skill">
+<p>Python Programming</p>
+<div class="bar"><div class="fill"></div></div>
+</div>
+
+</section>
+
+<section id="certificates">
+
+<h2>Certifications</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Cisco</h3>
+<ul>
+<li>Python Programming</li>
+<li>HTML</li>
+<li>CSS</li>
+<li>Java</li>
+<li>C Programming</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Deloitte</h3>
+<ul>
+<li>Data Analytics Job Simulation</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>IBM</h3>
+<ul>
+<li>Prompt Engineering for Everyone</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>ORACLE</h3>
+<ul>
+<li>Artificial Intelligence and Machine Learning</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Google</h3>
+<ul>
+<li>Generative AI – Google Cloud</li>
+<li>Google Skillshop</li>
+<li>Google Play Academy</li>
+</ul>
+</div>
+
+</div>
+
+</section>
+
+<section id="achievements">
+
+<h2>Achievements</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>NCC 'B' Certificate</h3>
+<p>Demonstrated leadership, discipline and national service.</p>
+</div>
+
+<div class="card">
+<h3>Football Champion</h3>
+<p>Inter-School Football Championship Winner.</p>
+</div>
+
+<div class="card">
+<h3>District Table Tennis Player</h3>
+<p>Represented district level competitions.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="education">
+
+<h2>Education</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h3>B.Tech – Computer Science (AI)</h3>
+<p>Currently Pursuing</p>
+</div>
+
+<div class="timeline-item">
+<h3>Intermediate – MPC</h3>
+<p>Sree Acharya Junior College</p>
+</div>
+
+<div class="timeline-item">
+<h3>Schooling – ICSE</h3>
+<p>Siva Sivani Public School</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2>Get In Touch</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Email</h3>
+<a href="mailto:vjagdeepsai@gmail.com">vjagdeepsai@gmail.com</a>
+</div>
+
+<div class="card">
+<h3>Phone</h3>
+<p>+91 9063802379</p>
+</div>
+
+<div class="card">
+<h3>LinkedIn</h3>
+<p>Explore my professional journey and achievements.</p>
+<a href="https://www.linkedin.com/in/jagdeep-sai-vandrasi-0910073a3">Visit Profile</a>
+</div>
+
+<div class="card">
+<h3>CodeChef</h3>
+<p>Check out my competitive programming activity.</p>
+<a href="https://www.codechef.com/users/eager_dance_7">View Profile</a>
+</div>
+
+</div>
+</div>
+
+</section>
+
+<footer>
+<p>© 2026 Jagdeep Sai Vandrasi | Built with passion for technology</p>
+</footer>
+
+<div class="chatbot-btn" onclick="toggleChat()">🤖</div>
+
+<div class="chatbox" id="chatbox">
+
+<div class="chat-header">Portfolio Assistant</div>
+
+<div class="chat-body" id="chatBody"></div>
+
+<div class="chat-input">
+
+<input id="userInput" placeholder="Ask about Jagdeep...">
+
+<button onclick="sendMsg()">Send</button>
+
+</div>
+
+</div>
+
+<script>
+
+const texts=[
+"Artificial Intelligence Enthusiast",
+"Full Stack Developer",
+"Tech Innovator"
+]
+
+let i=0,j=0,deleting=false
+
+function type(){
+
+let text=texts[i]
+
+if(!deleting) j++
+else j--
+
+document.getElementById("typing").innerText=text.substring(0,j)
+
+if(!deleting && j==text.length){
+deleting=true
+setTimeout(type,1200)
+return
+}
+
+if(deleting && j==0){
+deleting=false
+i=(i+1)%texts.length
+}
+
+setTimeout(type,deleting?50:100)
+
+}
+
+type()
+
+particlesJS("particles-js",{
+particles:{
+number:{value:80},
+size:{value:3},
+move:{speed:2},
+line_linked:{enable:true},
+color:{value:"#00ffe7"}
+}
+})
+
+function toggleChat(){
+let box=document.getElementById("chatbox")
+box.style.display=box.style.display=="flex"?"none":"flex"
+}
+
+function sendMsg(){
+
+let input=document.getElementById("userInput")
+let msg=input.value.toLowerCase()
+
+let body=document.getElementById("chatBody")
+
+body.innerHTML+="<p><b>You:</b> "+msg+"</p>"
+
+let reply="I am Jagdeep's portfolio assistant."
+
+if(msg.includes("project"))
+reply="Jagdeep built Scheme Finder and Smart Blind Stick."
+
+else if(msg.includes("skills"))
+reply="Jagdeep specializes in AI, Web Development and Python."
+
+else if(msg.includes("certificate") || msg.includes("certifications"))
+reply="Jagdeep has certificates from Cisco, IBM, Oracle, Deloitte and Google."
+
+else if(msg.includes("achievement"))
+reply="Jagdeep achieved NCC B Certificate, Inter School Football Champion and District Table Tennis Player."
+
+else if(msg.includes("education"))
+reply="Jagdeep currently pursuing BTech at Vignan Institute of Information Technology in branch of CSE(AI)."
+
+else if(msg.includes("contact") || msg.includes("email"))
+reply="You can contact Jagdeep at vjagdeepsai@gmail.com"
+
+body.innerHTML+="<p><b>Bot:</b> "+reply+"</p>"
+
+input.value=""
+
+}
+
+</script>
+
+</body>
+</html>
